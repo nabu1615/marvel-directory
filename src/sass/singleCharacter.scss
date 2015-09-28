@@ -1,0 +1,109 @@
+@import  "variables.scss";
+
+
+// Header single characters
+
+.box-header, .footer{
+	background-image: url('../assets/patter4.gif');
+}
+
+// Item Character
+
+.item-character {
+	.title{
+		font-size: 1em;
+		text-align: center;
+		margin-bottom: 20px;
+		position: absolute;
+		bottom: 0;
+		background-color: rgba($titleColor, 1);
+		padding: 5px 0;
+		width: 100%;
+		margin: 0;
+		border-top: 2px solid rgba($mainColor, .1);
+		border-bottom: 1px solid rgba($mainColor, .1);
+		background-image:url('../assets/patter3.jpg');
+		background-size:100%;
+		span{
+			display: block;
+			width: 100%;
+			text-transform:uppercase;
+			font-size: 1.2em;
+		}
+	}
+}
+
+
+// Single Item
+
+.box-single__item{
+	.image{
+		position:relative;
+		margin:0 auto;
+		border-radius: 200px;
+		border: 10px solid $headerColor;
+		box-shadow: 1px 1px 5px $mainColor;
+		width: 250px;
+		height: 250px;
+		box-sizing: border-box;
+		overflow: hidden;
+		padding: 0;
+		top:0;
+		position:relative;
+		@media (min-width: $medium) {
+			top:-80px;
+		}
+		@media (min-width: $semi) {
+			top:-160px;
+		}
+		img{
+			width:100%;
+			border-radius: 200px;
+			border: 5px solid $borderPictures;
+			width: 250px;
+			height: 250px;
+		}	
+	}
+}
+
+// See More
+
+.see-more{
+	width: 100%;
+	display: inline-block;
+	height: 45px;
+	overflow: hidden;
+	font-family: $titleFont;
+	a{
+		background-color:$buttonColor;
+		line-height: 3;
+		text-align: center;
+		color:white;
+		text-decoration: none;
+		display: inline-block;
+		padding: 0 20px;
+	}
+	.content{
+		text-align: right;
+	}
+}
+
+
+// Character Info
+
+.character-info {
+	margin:20px 0;
+	.available{
+		font-size: 1.4em;
+		font-weight: 900;
+		line-height: 100%;
+		span{
+			font-size: 1.6em;
+			padding:0 10px;	
+		}
+	}
+	.name{
+		font-size: .9em;
+		padding-right: 10px;	
+	}
+}

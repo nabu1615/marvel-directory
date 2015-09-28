@@ -1,0 +1,56 @@
+@import  "variables.scss";
+
+// More info characters
+
+.action{
+	position:absolute;
+	top:0;
+	bottom:0;
+	right: 0;
+	left: 0;
+	padding:20px;
+	background-color: rgba($titleColor, .8);
+	background-size:cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	flex-direction:column;
+	visibility: hidden;
+	font-family:$titleFont;
+	span{
+		color:white;
+		text-decoration: none;
+		font-size: 1.4em;
+		text-transform: uppercase;
+		cursor:pointer;	
+		padding:40px;
+	}
+	&.active{
+		visibility: visible;	
+	}
+}
+
+
+
+// Box-character
+
+.box-characters{
+	.item{
+	overflow: hidden;
+	margin-bottom:20px;
+	padding:0 20px;
+	}
+}
+
+.info{
+	overflow:hidden;
+	margin: 0 auto;
+	position:relative;
+	img{
+		width:100%;
+		height:100%;
+		vertical-align:top;
+	}
+}

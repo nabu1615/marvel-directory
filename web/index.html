@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Marvel Character Directory Single Page Aplication</title>
+        <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Oswald:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <header class="box-header">
+            <div class="box-header__bg">
+                <div class="container">
+                    <div class="logo">
+                        <img src="assets/MarvelLogo.svg" alt="">
+                    </div> 
+                    <div class="slogan">
+                        <span>Marvel character directory</span>
+                    </div>   
+                </div>
+            </div>
+        </header>
+        <div class="container">
+          <fieldset class="box-search">
+            <p class="title">Welcome to the Marvel Characters Directory Please enjoy all the information that I have collected. 
+            </p>
+            <input id="search" class="search" type="search" placeholder="E.g. Spiderman, Thor, Hulk">
+          </fieldset>
+        </div>
+        <section id="characters" class="heroes">
+        </section>
+        <script id="characters-item" type="text/template">
+            <div class="box-characters container" >
+                {{#each results}}
+                  <div class="item col-xs-12 col-sm-6 col-lg-4 item-character">    
+                    <div class="info">
+                      <img src="{{thumbnail.path}}.{{thumbnail.extension}}">
+                      <h2 class="title">
+                      <span class="characters-name">{{name}}</span>
+                      </h2>
+                      <div class="action">
+                          <span class="action-single" data-id="{{id}}">More about me</span>
+                      </div>
+                    </div>
+                  </div>
+                {{/each}}
+            </div>
+        </script>
+        <script id="single" type="text/template">
+            <div class="single-header">
+              <img src="assets/single-header.jpg"/>
+                <a class="close-this">
+                    <span>x</span>
+                </a>
+                <p class="close-txt">Close</p>
+            </div>
+            <div class="box-single__characters container">
+                <div class="box-single__item">    
+                    <div class="image col-sm-3">
+                        <img src="{{thumbnail.path}}.{{thumbnail.extension}}">
+                    </div>
+                    <div class="info col-sm-9">
+                        <h2 class="title">
+                            <span>{{name}}</span>
+                        </h2>
+                        <blockquote>
+                            <p>{{intro}}</p>
+                            <span>{{introAutor}}</span>
+                        </blockquote>
+                        <h3 class="title">Description</h3>
+                        <p>{{description}}</p>
+                        <div class="see-more">
+                            {{#urls}}
+                                <div class="content">
+                                    <a href="{{url}}" target="_blank">Full Profile</a>
+                                </div>
+                            {{/urls}}
+                        </div>
+                        <div class="row">
+                            <div class="box-comics character-info col-sm-4">
+                            <h3 class="title">Comics</h3>
+                                <p class="available">Available:<span>{{comics.available}}<span></p>
+                                {{#each comics.items}}
+                                    <p class="name">{{this.name}}</p>
+                                {{/each}} 
+                            </div>
+                            <div class="box-series character-info col-sm-4">
+                                <h3 class="title">Series</h3>
+                                <p class="available">Available:<span>{{series.available}}<span></p>
+                                {{#each series.items}}
+                                    <p class="name">{{this.name}}</p>
+                                {{/each}} 
+                            </div>
+                            <div class="box-series character-info col-sm-4">
+                                <h3 class="title">Stories</h3>
+                                <p class="available">Available:<span>{{stories.available}}<span></p>
+                                {{#each stories.items}}
+                                    <p class="name">{{this.name}}</p>
+                                {{/each}} 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </script>
+         <footer class="footer">
+            <div class="footer-image">
+                <div class="container">
+                    <p class="text">Powered by: Andres Vargas Sanchez / Prodigious Challenge</p>
+                </div>
+            </div>
+        </footer>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="js/vendor/md5.js"></script>
+        <script src="js/vendor/underscore-min.js"></script>
+        <script src="js/vendor/backbone-min.js"></script>
+        <script src="js/vendor/handlebars.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/models/character.js"></script>
+        <script src="js/collections/character.js"></script>
+        <script src="js/views/characters.js"></script>
+        <script src="js/views/singleCharacter.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
